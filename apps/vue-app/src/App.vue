@@ -40,20 +40,21 @@
 
 <script>
 import "./index.css";
-import { onMounted, provide, ref } from "vue";
+import { computed, onMounted, provide, ref } from "vue";
 import AppLayout from "./components/AppLayout.vue";
 import ProductSearch from "./components/ProductSearch.vue";
 import ProductList from "./components/ProductList.vue";
 import Sidebar from "./components/Sidebar.vue";
 import useFetch from "./useFetch";
-// import { useStore } from "vuex";
 
 export default {
   components: { AppLayout, ProductSearch, ProductList, Sidebar },
   setup() {
     // const loading = ref(false);
     // const products = ref([]);
-    const cartItems = ref([]);
+
+    // const store = useStore();
+    // const cartItems = ref([]);
     const showSidebar = ref(false);
 
     const toggleSidebar = () => {
@@ -71,28 +72,18 @@ export default {
 
     const searchProduct = async (name) => {
       url.value = name ? `${baseUrl}?title_like=${name}` : baseUrl;
-      // loading.value = true;
-      // let url = "http://localhost:4000/products";
-      // if (name) {
-      //   url += `?title_like=${name}`;
-      // }
-      // const res = await fetch(url);
-      // products.value = await res.json();
-      // loading.value = false;
     };
-
-    // onMounted(() => {
-    //   searchProduct();
-    // });
 
     provide("loading", loading);
     provide("products", products);
     provide("searchProduct", searchProduct);
-    provide("cartItems", cartItems);
+    // provide("cartItems", cartItems);
 
     return {
       toggleSidebar,
       showSidebar,
+      // addToCart: () => store.commit("addToCart"),
+      // cartItems: computed(() => store.state.cartItems),
     };
   },
 };

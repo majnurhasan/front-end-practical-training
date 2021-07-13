@@ -6,7 +6,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.0.5"
+    "vue": "^3.0.5",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.3",
@@ -14,7 +15,6 @@
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4",
-    "vite": "^2.3.8",
-    "vuex": "^4.0.2"
+    "vite": "^2.3.8"
   }
 }

@@ -1,6 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-// import Store from "./store";
+import store from "./store";
+// createApp(App).mount("#app");
+createApp(App).use(store).mount("#app");
 
-// createApp(App).use(Store).mount("#app");
-createApp(App).mount("#app");
+// const app = createApp(App);
+// app.use(store);
+// app.mount("#app");

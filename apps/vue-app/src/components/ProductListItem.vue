@@ -32,7 +32,7 @@
           <button
             type="button"
             class="flex items-center justify-center w-10 h-10 text-sm bg-green-600 rounded-full shadow-md hover:bg-green-500 focus:outline-none focus:ring-green-400 focus:ring-1 text-gray-50"
-            v-on:click="addToCart"
+            @click="addToCart(product)"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,8 @@
 </template>
 
 <script>
-import { inject } from "vue";
+import { inject, computed } from "vue";
+import { mapActions } from "vuex";
 
 export default {
   props: {
@@ -60,6 +61,9 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  methods: {
+    ...mapActions(["addToCart"]),
   },
   setup() {
     // let cartItems = inject("cartItems");

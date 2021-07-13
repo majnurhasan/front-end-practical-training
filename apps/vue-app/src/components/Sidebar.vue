@@ -21,7 +21,11 @@
         Your Cart
       </h3>
       <div class="mt-4 divide-y-2">
-        <!-- <CartItem /> -->
+        <CartItem
+          v-for="cartItem in cartItems"
+          :key="cartItem.id"
+          :product="cartItem"
+        />
       </div>
       <button
         type="button"
@@ -36,16 +40,20 @@
 <script>
 import { inject } from "vue";
 import CartItem from "./CartItem.vue";
+import { mapState } from "vuex";
 
 export default {
   components: { CartItem },
+  computed: {
+    ...mapState(["cartItems"]),
+  },
   setup() {
     const loading = inject("loading");
-    const products = inject("products");
+    // const products = inject("products");
+    // const cartItems = inject("cartItems");
 
     return {
       loading,
-      products,
     };
   },
 };

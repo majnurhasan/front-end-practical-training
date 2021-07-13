@@ -1,25 +1,26 @@
 <template>
   <div class="flex items-center">
     <div class="flex justify-center p-4">
-      <img
-        class="w-24 h-auto"
-        :src="product.image"
-        alt="Product"
-      />
+      <img class="w-24 h-auto" :src="product.image" alt="Product" />
     </div>
     <div class="space-y-2">
       <div class="text-base text-gray-700 sm:text-sm">
         {{ product.title }}
       </div>
       <div>
-        <div class="text-sm text-gray-600 sm:text-xs">Quantity: {{ product.quantity }} </div>
+        <div class="text-sm text-gray-600 sm:text-xs">
+          Quantity: {{ product.quantity }}
+        </div>
         <div class="text-sm font-semibold text-gray-700 sm:text-xs">
-          $ {{ product.price}}
+          $ {{ product.price }}
         </div>
       </div>
     </div>
     <div>
-      <a href="#" class="text-gray-600 hover:text-gray-800">
+      <button
+        class="text-gray-600 hover:text-gray-800"
+        @click="deleteFromCart(product.id)"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="w-5 h-5"
@@ -32,18 +33,23 @@
             clip-rule="evenodd"
           />
         </svg>
-      </a>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   props: {
     product: {
       type: Object,
       required: true,
     },
+  },
+  methods: {
+    ...mapActions(["deleteFromCart"]),
   },
   setup() {},
 };
