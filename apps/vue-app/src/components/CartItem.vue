@@ -40,6 +40,7 @@
 
 <script>
 import { mapActions } from "vuex";
+import { inject } from "vue";
 
 export default {
   props: {

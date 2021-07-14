@@ -77,6 +77,8 @@ export default {
     provide("loading", loading);
     provide("products", products);
     provide("searchProduct", searchProduct);
+    provide("toggleSidebar", toggleSidebar);
+    provide("showSidebar", showSidebar);
     // provide("cartItems", cartItems);
 
     return {

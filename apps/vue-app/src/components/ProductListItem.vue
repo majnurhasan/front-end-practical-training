@@ -31,7 +31,7 @@
           </a>
           <button
             type="button"
-            class="flex items-center justify-center w-10 h-10 text-sm bg-green-600 rounded-full shadow-md hover:bg-green-500 focus:outline-none focus:ring-green-400 focus:ring-1 text-gray-50"
+            class="flex items-center justify-center w-10 h-10 text-sm bg-green-600 rounded-full shadow-md  hover:bg-green-500 focus:outline-none focus:ring-green-400 focus:ring-1 text-gray-50"
             @click="addToCart(product)"
           >
             <svg

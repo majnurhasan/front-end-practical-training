@@ -37,14 +37,14 @@ export default createStore({
           (item) => item.id === payload.id
         );
         const updatedItems = [...state.cartItems];
-        console.log(itemIndex);
+        // console.log(itemIndex);
         updatedItems[itemIndex].quantity += 1;
         state.cartItems = updatedItems;
       } else {
         state.cartItems.push({ ...payload, quantity: 1 });
       }
 
-      console.log(state.cartItems);
+      // console.log(state.cartItems);
     },
     removeFromCart(state, payload) {
       // minus quantity
@@ -55,7 +55,7 @@ export default createStore({
           (item) => item.id === payload
         );
         const updatedItems = [...state.cartItems];
-        console.log(itemIndex);
+        // console.log(itemIndex);
         updatedItems[itemIndex].quantity -= 1;
         state.cartItems = updatedItems;
       } else {

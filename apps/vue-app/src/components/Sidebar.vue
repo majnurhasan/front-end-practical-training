@@ -2,7 +2,11 @@
   <aside class="fixed inset-y-0 right-0 z-10 w-11/12 h-full sm:w-96">
     <div class="w-full h-full px-5 py-4 bg-white border-l-2 shadow-lg">
       <div class="flex justify-end">
-        <a href="#" class="flex-none text-gray-600 hover:text-gray-800">
+        <a
+          href="#"
+          class="flex-none text-gray-600 hover:text-gray-800"
+          v-on:click="toggleSidebar"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-6 h-6"
@@ -29,7 +33,7 @@
       </div>
       <button
         type="button"
-        class="flex items-center justify-center w-full h-10 mt-4 space-x-2 text-sm bg-green-600 rounded-md shadow-md hover:bg-green-500 focus:outline-none text-gray-50"
+        class="flex items-center justify-center w-full h-10 mt-4 space-x-2 text-sm bg-green-600 rounded-md shadow-md  hover:bg-green-500 focus:outline-none text-gray-50"
       >
         <span>Check out</span>
       </button>
@@ -49,11 +53,15 @@ export default {
   },
   setup() {
     const loading = inject("loading");
+    const showSidebar = inject("showSidebar");
+    const toggleSidebar = inject("toggleSidebar");
     // const products = inject("products");
     // const cartItems = inject("cartItems");
 
     return {
       loading,
+      toggleSidebar,
+      showSidebar,
     };
   },
 };
